@@ -3,7 +3,7 @@ import math
 
 class Test(mglw.WindowConfig):
     window_size = (800, 600)
-    resource_dir = 'shaders'
+    resource_dir = 'basics/shaders'
     move = [0, 0]
 
     def __init__(self, **kwargs):
@@ -49,7 +49,7 @@ class Test(mglw.WindowConfig):
     def render(self, time, frametime):
         # This method is called every frame
         self.ctx.clear()
-        self.set_uniform('time', math.cos(time / 2))
+        self.set_uniform('time', math.sin(time))
         self.set_uniform('move', self.move)
         self.quad.render(self.program)
 
